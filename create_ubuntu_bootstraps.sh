@@ -20,7 +20,7 @@ fi
 
 # Keep in mind that although you can choose any version of Ubuntu/Debian
 # here, but this script has only been tested with Ubuntu 18.04 Bionic
-export CHROOT_DISTRO="bionic"
+export CHROOT_DISTRO="jammy"
 export CHROOT_MIRROR="http://archive.ubuntu.com/ubuntu/"
 
 # Set your preferred path for storing chroots
@@ -94,6 +94,10 @@ apt-get -y install software-properties-common
 add-apt-repository -y ppa:ubuntu-toolchain-r/test
 add-apt-repository -y ppa:cybermax-dexter/mingw-w64-backport
 apt-get update
+apt-get -y install flex
+apt-get -y install bison
+apt-get -y install libfreetype-dev
+apt-get -y install libxcursor-dev libxi-dev libxrandr-dev libxxf86vm-dev libxinerama-dev libxcomposite-dev libosmesa6-dev ocl-icd-opencl-dev libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libsdl2-dev libcups2-dev libfontconfig-dev libvulkan-dev libgnutls28-dev gettext
 apt-get -y build-dep wine-development libsdl2 libvulkan1
 apt-get -y install ccache gcc-9 g++-9 wget git gcc-mingw-w64 g++-mingw-w64
 apt-get -y install libxpresent-dev libjxr-dev libusb-1.0-0-dev libgcrypt20-dev libpulse-dev libudev-dev libsane-dev libv4l-dev libkrb5-dev libgphoto2-dev liblcms2-dev libpcap-dev libcapi20-dev
@@ -108,8 +112,8 @@ wget -O faudio.tar.gz https://github.com/FNA-XNA/FAudio/archive/${faudio_version
 wget -O vulkan-loader.tar.gz https://github.com/KhronosGroup/Vulkan-Loader/archive/v${vulkan_loader_version}.tar.gz
 wget -O vulkan-headers.tar.gz https://github.com/KhronosGroup/Vulkan-Headers/archive/v${vulkan_headers_version}.tar.gz
 wget -O spirv-headers.tar.gz https://github.com/KhronosGroup/SPIRV-Headers/archive/${spirv_headers_version}.tar.gz
-if [ -d /usr/lib/i386-linux-gnu ]; then wget -O wine.deb https://dl.winehq.org/wine-builds/ubuntu/dists/bionic/main/binary-i386/wine-stable_4.0.3~bionic_i386.deb; fi
-if [ -d /usr/lib/x86_64-linux-gnu ]; then wget -O wine.deb https://dl.winehq.org/wine-builds/ubuntu/dists/bionic/main/binary-amd64/wine-stable_4.0.3~bionic_amd64.deb; fi
+if [ -d /usr/lib/i386-linux-gnu ]; then wget -O wine.deb https://dl.winehq.org/wine-builds/ubuntu/dists/jammy/main/binary-i386/wine-stable-i386_7.0.1~jammy-1_i386.deb; fi
+if [ -d /usr/lib/x86_64-linux-gnu ]; then wget -O wine.deb https://dl.winehq.org/wine-builds/ubuntu/dists/jammy/main/binary-amd64/wine-stable_7.0.1~jammy-1_amd64.deb; fi
 git clone git://source.winehq.org/git/vkd3d.git
 tar xf sdl.tar.gz
 tar xf faudio.tar.gz
