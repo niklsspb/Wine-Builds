@@ -362,7 +362,7 @@ for build in wine-${BUILD_NAME}-x86 wine-${BUILD_NAME}-amd64; do
 	fi
 done
 
-rm -rf "${BUILD_DIR}"
+#rm -rf "${BUILD_DIR}"
 
 echo
 echo "Done"
