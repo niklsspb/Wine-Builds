@@ -26,7 +26,7 @@ export CHROOT_MIRROR="http://archive.ubuntu.com/ubuntu/"
 # Set your preferred path for storing chroots
 # Also don't forget to change the path to the chroots in the build_wine.sh
 # script, if you are going to use it
-export MAINDIR=/opt/chroots
+export MAINDIR=/opt/chroots1
 export CHROOT_X64="${MAINDIR}"/${CHROOT_DISTRO}64_chroot
 export CHROOT_X32="${MAINDIR}"/${CHROOT_DISTRO}32_chroot
 
@@ -96,8 +96,8 @@ add-apt-repository -y ppa:cybermax-dexter/mingw-w64-backport
 apt-get update
 apt-get -y install flex
 apt-get -y install bison
-apt-get -y install libfreetype-dev
-apt-get -y install gcc-multilib gcc9 libxcursor-dev libxi-dev libxrandr-dev libxxf86vm-dev libxinerama-dev libxcomposite-dev libosmesa6-dev ocl-icd-opencl-dev libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libsdl2-dev libcups2-dev libfontconfig-dev libvulkan-dev libgnutls28-dev gettext libc6-dev libcapi20-dev 
+apt-get -y install libfreetype-dev libfreetype-dev:i386 libx11-dev:i386
+apt-get -y install build-essential gcc-multilib libxcursor-dev libxi-dev libxrandr-dev libxxf86vm-dev libxinerama-dev libxcomposite-dev libosmesa6-dev ocl-icd-opencl-dev libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libsdl2-dev libcups2-dev libfontconfig-dev libvulkan-dev libgnutls28-dev gettext libc6-dev libcapi20-dev 
 apt-get -y build-dep wine-development libsdl2 libvulkan1
 apt-get -y install ccache gcc-9 g++-9 wget git gcc-mingw-w64 g++-mingw-w64
 apt-get -y install libxpresent-dev libjxr-dev libusb-1.0-0-dev libgcrypt20-dev libpulse-dev libudev-dev libsane-dev libv4l-dev libkrb5-dev libgphoto2-dev liblcms2-dev libpcap-dev libcapi20-dev
@@ -159,5 +159,5 @@ prepare_chroot 64
 rm "${CHROOT_X64}"/opt/prepare_chroot.sh
 rm "${CHROOT_X32}"/opt/prepare_chroot.sh
 
-clear
+#clear
 echo "Done"
