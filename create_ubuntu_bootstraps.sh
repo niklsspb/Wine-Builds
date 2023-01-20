@@ -97,7 +97,7 @@ apt-get update
 apt-get -y install flex
 apt-get -y install bison
 apt-get -y install libfreetype-dev
-apt-get -y install libxcursor-dev libxi-dev libxrandr-dev libxxf86vm-dev libxinerama-dev libxcomposite-dev libosmesa6-dev ocl-icd-opencl-dev libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libsdl2-dev libcups2-dev libfontconfig-dev libvulkan-dev libgnutls28-dev gettext
+apt-get -y install gcc-multilib gcc9 libxcursor-dev libxi-dev libxrandr-dev libxxf86vm-dev libxinerama-dev libxcomposite-dev libosmesa6-dev ocl-icd-opencl-dev libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev libsdl2-dev libcups2-dev libfontconfig-dev libvulkan-dev libgnutls28-dev gettext libc6-dev libcapi20-dev 
 apt-get -y build-dep wine-development libsdl2 libvulkan1
 apt-get -y install ccache gcc-9 g++-9 wget git gcc-mingw-w64 g++-mingw-w64
 apt-get -y install libxpresent-dev libjxr-dev libusb-1.0-0-dev libgcrypt20-dev libpulse-dev libudev-dev libsane-dev libv4l-dev libkrb5-dev libgphoto2-dev liblcms2-dev libpcap-dev libcapi20-dev
